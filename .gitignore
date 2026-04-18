@@ -1,2 +1,29 @@
+# Build output
 bin/
 obj/
+
+# Visual Studio / .NET build artifacts
+*.dll
+*.pdb
+*.exe
+*.cache
+*.json
+*.runtimeconfig.json
+*.deps.json
+
+# NuGet
+*.nuget.*
+project.assets.json
+project.nuget.cache
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider / JetBrains
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
