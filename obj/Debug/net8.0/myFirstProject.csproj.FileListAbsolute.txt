@@ -12,3 +12,4 @@
 /home/yassine/myFirstProject/obj/Debug/net8.0/myFirstProject.pdb
 /home/yassine/myFirstProject/obj/Debug/net8.0/myFirstProject.genruntimeconfig.cache
 /home/yassine/myFirstProject/obj/Debug/net8.0/ref/myFirstProject.dll
+/home/yassine/myFirstProject/obj/Debug/net8.0/myFirstProject.sourcelink.json
