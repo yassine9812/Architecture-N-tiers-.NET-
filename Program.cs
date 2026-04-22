@@ -11,6 +11,7 @@
             Console.WriteLine("5 - Exercice5");
             Console.WriteLine("6 - Exercice6");
             Console.WriteLine("7 - Exercice7");
+            Console.WriteLine("8 - Exercice8");
 
             string choice = Console.ReadLine();
 
@@ -28,6 +29,8 @@
                 Exercice6.Run();
             else if (choice=="7")
                 Exercice7.Run();
+            else if (choice=="8")
+                Exercice8.Run();
         }
     }
 }
