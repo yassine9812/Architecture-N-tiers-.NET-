@@ -1,4 +1,8 @@
-﻿class Program
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
 {
     static void Main()
     {
@@ -10,6 +14,9 @@
             books.Add(new Book(4, "Pride and Prejudice", "Jane Austen", 7.99));
             books.Add(new Book(5, "The Catcher in the Rye", "J.D. Salinger", 6.99));
         }
+        Console.ForegroundColor = ConsoleColor.Green;
+        System.Console.WriteLine("=== List of Books ===");
+        Console.ResetColor();
         Console.WriteLine("Books in the collection:");
         foreach (Book book in books)
         {
@@ -60,7 +67,9 @@
             Console.WriteLine("-----------------------");
         }
 
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("=== Dictionary ===");
+        Console.ResetColor();
 
         Dictionary<int, Book> bookDictionary = new Dictionary<int, Book>();
         foreach (Book book in books)
@@ -86,8 +95,9 @@
             item.Value.Display();
             Console.WriteLine("-----------------------");
         }
-
+        Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Utilsation of Stack:");
+        Console.ResetColor();
         Stack<Book> bookStack = new Stack<Book>();
         foreach (Book book in books)
         {
@@ -116,6 +126,58 @@
         {
             Console.WriteLine("Stack is empty.");
         }
+        Console.ForegroundColor = ConsoleColor.Green;
+        System.Console.WriteLine("Utilisation de Queue:");
+        Console.ResetColor();
+        Queue<Book> bookQueue = new Queue<Book>();
 
+        bookQueue.Enqueue(books[0]);
+        bookQueue.Enqueue(books[1]);
+        bookQueue.Enqueue(books[2]);
+
+        System.Console.WriteLine("Dequeue:");
+        while (bookQueue.Count > 0)
+        {
+            Book book = bookQueue.Dequeue();
+            book.Display();
+            System.Console.WriteLine("-----------------------");
+        }
+        Console.ForegroundColor = ConsoleColor.Green;
+        System.Console.WriteLine("Using LINQ");
+        Console.ResetColor();
+
+        System.Console.WriteLine("Books with price greater than 10:");
+        var expensiveBooks = books.Where(b => b.Price > 10);
+        foreach (Book book in expensiveBooks)
+        {
+            book.Display();
+            System.Console.WriteLine("-----------------------");
+        }
+
+        System.Console.WriteLine("Enter the minimum price of a book to search:");
+        double minPrice = double.Parse(Console.ReadLine());
+        var booksAboveMinPrice = books.Where(b => b.Price > minPrice);
+        System.Console.WriteLine("Books with price greater than " + minPrice + ":");
+        foreach (Book book in booksAboveMinPrice)
+        {
+            book.Display();
+            System.Console.WriteLine("-----------------------");    
+        }
+
+        System.Console.WriteLine("Books sorted by title:");
+        var sortedByTitile=books.OrderBy(b=>b.Title);
+        foreach( Book book in sortedByTitile)
+        {
+            book.Display();
+            System.Console.WriteLine("-----------------------");
+        }
+
+        System.Console.WriteLine("Average price of books:");
+        double averagePrice=books.Average(b=>b.Price);
+        System.Console.WriteLine("Average price: "+averagePrice);
+
+        System.Console.WriteLine("Counting all of Books:");
+        int countBooks=books.Count();
+        System.Console.WriteLine("Total number of books: "+countBooks);
     }
 }
